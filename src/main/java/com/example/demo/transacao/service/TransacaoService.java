@@ -19,9 +19,9 @@ public class TransacaoService {
     public void createTransacao(Transacao transacao){
         if (transacao != null){
             transacaoRepository.salvar(transacao);
-            return;
+        } else {
+            throw new RuntimeException("Transação não pode ser nula!");
         }
-        throw new RuntimeException("Transação não pode ser nula!");
     }
 
     public void deleteTransacao(){

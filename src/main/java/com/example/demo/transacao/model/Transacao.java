@@ -3,16 +3,18 @@ package com.example.demo.transacao.model;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.PositiveOrZero;
 
 public class Transacao {
     
-    @PositiveOrZero
-    BigDecimal valor;
+    @NotNull(message= "O valor da transação não pode ser nulo")
+    @PositiveOrZero(message= "Valor da transação deve ser maior ou igual a zero")
+    private BigDecimal valor;
 
-    @PastOrPresent
-    OffsetDateTime dataHora;
+    @PastOrPresent(message= "A data da transação deve ser no presente ou passado")
+    private OffsetDateTime dataHora;
 
     public Transacao(){
         this.dataHora = OffsetDateTime.now();

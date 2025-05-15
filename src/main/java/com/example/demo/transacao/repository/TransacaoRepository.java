@@ -23,4 +23,8 @@ public class TransacaoRepository{
     public List<Transacao> listarTodos(){
         return transacaoList.stream().toList();
     }
+
+    public List<Transacao> getTransacaoList() {
+        return transacaoList;
+    }
 }
