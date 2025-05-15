@@ -1,6 +1,5 @@
 package com.example.demo.transacao.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,8 +18,17 @@ public class TransacaoService {
 
     public void createTransacao(Transacao transacao){
         if (transacao != null){
-            
+            transacaoRepository.salvar(transacao);
+            return;
         }
         throw new RuntimeException("Transação não pode ser nula!");
+    }
+
+    public void deleteTransacao(){
+        transacaoRepository.deletar();
+    }
+
+    public List<Transacao> showAllTransactions(){
+        return transacaoRepository.listarTodos();
     }
 }

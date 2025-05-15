@@ -19,9 +19,8 @@ public class TransacaoRepository{
     public void deletar(){
         transacaoList.clear();
     }
-    
+
     public List<Transacao> listarTodos(){
         return transacaoList.stream().toList();
     }
-
 }
