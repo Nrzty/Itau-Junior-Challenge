@@ -55,7 +55,7 @@ My solution to the Itaú Junior challenge: [Challenge Link](https://github.com/r
 **Method**: GET\
 **Content-Type**: `application/json`
 
-**Observation: If no transaction has been recorded, it will return 0 in all fields.
+**Observation: If no transaction has been recorded, it will return 0 in all fields.**
 
 ### Response:
 
